@@ -20,4 +20,11 @@ function initializeThroughput(gates) {
   return summary;
 }
 
-
+function processGateFlow(gate, tickIndex) {
+  let currentTickQueue = gate.queue[tickIndex];
+  let processed = 0;
+  while (currentTickQueue > 0 && processed < gate.capacity) {
+    currentTickQueue--;
+    processed++;
+  }
+}
